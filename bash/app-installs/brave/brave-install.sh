@@ -6,8 +6,8 @@ RHEL_REPO="https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo"
 
 # trivial os detection
 detect_os() {
-  if [ -f "/etc/os-release" ]; then
-    . /etc/os-release
+  if [ -f "${OS_RELEASE_FILE:-/etc/os-release}" ]; then
+    . "${OS_RELEASE_FILE:-/etc/os-release}"
     OS=$NAME
     VERSION=$VERSION_ID
   elif [ -f "/etc/redhat-release" ]; then
@@ -64,7 +64,9 @@ brave-manjaro(){
     pacman -S brave-browser
 }
 
-detect_os
+if [ -z "$OS_CHECK_TEST" ]; then
+  detect_os
+fi
 
 #Checks output of detect_os and runs the function for your operating system
 case $OS in

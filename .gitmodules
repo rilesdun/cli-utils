@@ -1,9 +1,0 @@
-[submodule "bash/app-installs/brave/test/bats"]
-	path = bash/app-installs/brave/test/bats
-	url = https://github.com/bats-core/bats-core.git
-[submodule "bash/app-installs/brave/test/test_helper/bats-support"]
-	path = bash/app-installs/brave/test/test_helper/bats-support
-	url = https://github.com/bats-core/bats-support.git
-[submodule "bash/app-installs/brave/test/test_helper/bats-assert"]
-	path = bash/app-installs/brave/test/test_helper/bats-assert
-	url = https://github.com/bats-core/bats-assert.git

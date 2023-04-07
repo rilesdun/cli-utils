@@ -11,17 +11,14 @@ detect_os() {
     OS=$NAME
     VERSION=$VERSION_ID
   elif [ -f "/etc/redhat-release" ]; then
-    # Using redhat-release instead of /etc/os-release for fun
     OS=$(cat /etc/redhat-release | awk '{print $1}')
     VERSION=$(cat /etc/redhat-release | awk '{print $(NF-1)}' | tr -d '()')
 
   elif [ -f "/etc/arch-release" ] && grep -q "Manjaro" /etc/os-release; then
-    # This check is specific to Manjaro Linux
     OS="Manjaro Linux"
     VERSION=$(grep "VERSION_ID" /etc/os-release | cut -d '=' -f 2 | tr -d '"')
 
   elif [ -f "/etc/arch-release" ]; then
-    # This check is for Arch Linux
     OS="Arch Linux"
     VERSION=$(uname -r)
 

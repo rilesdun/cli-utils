@@ -48,7 +48,7 @@ sudo zypper install brave-browser
 #OS check
 detect_os
 
-# Check if the OS is supported and run the commands the proper commands for your operating system
+#check if the OS is supported and run the commands the proper commands for your operating system
 case $OS in
   "Debian GNU/Linux" | "Ubuntu" | "Linux Mint")
     echo "You are running $OS $VERSION"
